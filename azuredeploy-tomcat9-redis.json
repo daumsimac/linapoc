@@ -93,12 +93,12 @@
   "variables": {
     "imagePublisher": "Canonical",
     "imageOffer": "UbuntuServer",
-    "nicName": "redisVMNic",
-    "nsgName": "myNSG",
+    "nicName": "tomcatVMNic",
+    "nsgName": "tomcatNSG",
     "vmName": "TomcatDev",
     "subnetName": "Subnet",
-    "publicIPAddressName": "myPublicIP",
-    "virtualNetworkName": "RedisVNET",
+    "publicIPAddressName": "tomcatPublicIP",
+    "virtualNetworkId": "/subscriptions/8e1e53e8-1c66-4053-b820-e2144d338ad8/resourceGroups/Redis-RG/providers/Microsoft.Network/virtualNetworks/RedisVNET",
     "linuxConfiguration": {
       "disablePasswordAuthentication": true,
       "ssh": {
@@ -183,7 +183,7 @@
       "location": "[parameters('location')]",
       "dependsOn": [
         "[resourceId('Microsoft.Network/publicIPAddresses', variables('publicIPAddressName'))]",
-        "[resourceId('Microsoft.Network/virtualNetworks', variables('virtualNetworkName'))]",
+        "[resourceId('Microsoft.Network/virtualNetworks', variables('virtualNetworkId'))]",
         "[resourceId('Microsoft.Network/networkSecurityGroups', variables('nsgName'))]"
       ],
       "properties": {
