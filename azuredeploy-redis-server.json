@@ -10,7 +10,7 @@
         "redis-5.0.12"
       ],
       "metadata": {
-        "description": "tomcat Package Name"
+        "description": "Redis Package Name"
       }
     },
     "adminUsername": {
@@ -99,7 +99,7 @@
         ]
       }
     },
-    "networkSecurityGroupName": "default-NSG"
+    "networkSecurityGroupName": "redis-NSG"
   },
   "resources": [
     {
