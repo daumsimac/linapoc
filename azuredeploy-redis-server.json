@@ -6,6 +6,7 @@
       "type": "string",
       "defaultValue": "redis-server",
       "allowedValues": [
+        "redis-server",
         "redis-6.0.14",
         "redis-5.0.12"
       ],
