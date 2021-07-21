@@ -3,7 +3,7 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "redisPackageName": {
-      "value": "redis-server
+      "value": "redis-server"
     },
     "adminUsername": {
       "value": "GEN-UNIQUE"
