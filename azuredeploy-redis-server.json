@@ -139,7 +139,7 @@
           {
             "name": "default-allow-6379",
             "properties": {
-              "priority": 1000,
+              "priority": 1100,
               "access": "Allow",
               "direction": "Inbound",
               "destinationPortRange": "6379",
