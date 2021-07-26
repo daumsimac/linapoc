@@ -2,16 +2,6 @@
   "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
-    "PackageName": {
-      "type": "string",
-      "defaultValue": "nginx",
-      "allowedValues": [
-        "nginx"
-      ],
-      "metadata": {
-        "description": "Mginx Package Name"
-      }
-    },
     "adminUsername": {
       "type": "string",
       "metadata": {
@@ -269,7 +259,7 @@
           "fileUris": [
             "[uri(parameters('_artifactsLocation'), concat('nginx-install.sh', parameters('_artifactsLocationSasToken')))]"
           ],
-          "commandToExecute": "[concat('sh nginx-install.sh',' ',parameters('PackageName'))]"
+          "commandToExecute": "[concat('sh nginx-install.sh',' ',parameters('nginx'))]"
         }
       }
     }
