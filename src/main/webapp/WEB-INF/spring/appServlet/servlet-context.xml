@@ -26,7 +26,7 @@
 	
 	<bean class="org.apache.commons.dbcp.BasicDataSource" id="dataSource">
 	    <property name="driverClassName" value="org.postgresql.Driver"></property>
-	    <property name="url" value="jdbc:postgresql://n-healthcare.postgres.database.azure.com:5432/postgres"></property>
+	    <property name="url" value="jdbc:postgresql://n-healthcare.postgres.database.azure.com:5432/linamember"></property>
 	    <property name="username" value="pgadmin@n-healthcare.postgres.database.azure.com"></property>
 	    <property name="password" value="eogksalsrnr1!"></property>
 	</bean>
