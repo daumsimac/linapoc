@@ -2,14 +2,14 @@
   "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
-    "redisPackageName": {
+    "PackageName": {
       "type": "string",
       "defaultValue": "nginx",
       "allowedValues": [
         "nginx"
       ],
       "metadata": {
-        "description": "Redis Package Name"
+        "description": "Mginx Package Name"
       }
     },
     "adminUsername": {
