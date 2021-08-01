@@ -97,7 +97,7 @@
     "nsgName": "nexusNSG",
     "vmName": "Nexus-Server",
     "addressPrefix": "10.0.0.0/16",
-    "subnetName": "Subnet",
+    "subnetName": "MySubnet",
     "subnetPrefix": "10.0.0.0/24",
     "publicIPAddressName": "nexusPublicIP",
     "virtualNetworkName": "MyVNET",
