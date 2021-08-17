@@ -5,12 +5,6 @@
         "location": {
             "value": "koreacentral"
         },
-        "networkInterfaceName": {
-            "value": "dev-was-backend-vm01862"
-        },
-        "networkSecurityGroupName": {
-            "value": "DEV-WAS-Backend-VM01-nsg"
-        },
         "networkSecurityGroupRules": {
             "value": [
                 {
@@ -30,9 +24,6 @@
         },
         "subnetName": {
             "value": "Dev-DB-Subnet"
-        },
-        "virtualNetworkId": {
-            "value": "/subscriptions/8e1e53e8-1c66-4053-b820-e2144d338ad8/resourceGroups/DEV-RG/providers/Microsoft.Network/virtualNetworks/DEV-Vnet"
         },
         "publicIpAddressName": {
             "value": "DEV-WAS-Backend-VM01-ip"
