@@ -60,9 +60,6 @@
         },
         "adminUsername": {
             "value": "rootadmin"
-        },
-        "adminPassword": {
-            "value": null
         }
     }
 }
