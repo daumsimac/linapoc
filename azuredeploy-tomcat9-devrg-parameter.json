@@ -1,0 +1,68 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "koreacentral"
+        },
+        "networkInterfaceName": {
+            "value": "dev-was-backend-vm01862"
+        },
+        "networkSecurityGroupName": {
+            "value": "DEV-WAS-Backend-VM01-nsg"
+        },
+        "networkSecurityGroupRules": {
+            "value": [
+                {
+                    "name": "SSH",
+                    "properties": {
+                        "priority": 300,
+                        "protocol": "TCP",
+                        "access": "Allow",
+                        "direction": "Inbound",
+                        "sourceAddressPrefix": "*",
+                        "sourcePortRange": "*",
+                        "destinationAddressPrefix": "*",
+                        "destinationPortRange": "22"
+                    }
+                }
+            ]
+        },
+        "subnetName": {
+            "value": "Dev-DB-Subnet"
+        },
+        "virtualNetworkId": {
+            "value": "/subscriptions/8e1e53e8-1c66-4053-b820-e2144d338ad8/resourceGroups/DEV-RG/providers/Microsoft.Network/virtualNetworks/DEV-Vnet"
+        },
+        "publicIpAddressName": {
+            "value": "DEV-WAS-Backend-VM01-ip"
+        },
+        "publicIpAddressType": {
+            "value": "Dynamic"
+        },
+        "publicIpAddressSku": {
+            "value": "Basic"
+        },
+        "virtualMachineName": {
+            "value": "DEV-WAS-Backend-VM01"
+        },
+        "virtualMachineComputerName": {
+            "value": "DEV-WAS-Backend-VM01"
+        },
+        "virtualMachineRG": {
+            "value": "DEV-RG"
+        },
+        "osDiskType": {
+            "value": "StandardSSD_LRS"
+        },
+        "virtualMachineSize": {
+            "value": "Standard_B2s"
+        },
+        "adminUsername": {
+            "value": "rootadmin"
+        },
+        "adminPassword": {
+            "value": null
+        }
+    }
+}
