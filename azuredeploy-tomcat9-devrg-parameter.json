@@ -62,7 +62,7 @@
             "value": "rootadmin"
         },
         "adminPassword": {
-            "value": null
+            "type": "string"
         }
     }
 }
