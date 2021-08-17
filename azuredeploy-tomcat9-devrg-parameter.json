@@ -62,7 +62,7 @@
             "value": "rootadmin"
         },
         "adminPassword": {
-            "value": "GEN-SSH-PUB-KEY"
+            "value": null
         }
     }
 }
