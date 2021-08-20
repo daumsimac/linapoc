@@ -1,5 +1,5 @@
 {
-  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json",
   "contentVersion": "1.0.0.0",
   "parameters": {
     "javaPackageName": {
@@ -42,8 +42,16 @@
     },
     "vmcount": {
       "type": "int",
+      "defaultValue": 2,
       "metadata": {
-        "description":  "The count of VMs"
+        "description": "The count of VMs"
+      }
+    },
+    "vmprefix": {
+      "type": "int",
+      "defaultValue": "CK-Dev-WAS-0",
+      "metadata": {
+        "description": "The prefix of VM name"
       }
     },
     "ubuntuOSVersion": {
@@ -101,7 +109,7 @@
   "variables": {
     "imagePublisher": "Canonical",
     "imageOffer": "UbuntuServer",
-    "vmname": "[concat('CK-Dev-WAS-0'), copyIndex()]",
+    "vmname": "[concat(parameters('vmprefix'), copyIndex()]",
     "nicName": "[concat('vmname', 'Nic')]",
     "nsgName": "[concat('vmname', 'NSG')]",
     "addressPrefix": "10.0.0.0/16",
