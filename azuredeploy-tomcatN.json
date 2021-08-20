@@ -27,12 +27,6 @@
         "description": "tomcat Package Name"
       }
     },
-    "adminUsername": {
-      "type": "string",
-      "metadata": {
-        "description": "User name for the Virtual Machine."
-      }
-    },
     "vmSize": {
       "type": "string",
       "defaultValue": "Standard_D2s_v3",
@@ -40,11 +34,11 @@
         "description": "The size of the virtual machines used when provisioning"
       }
     },
-    "vmprefix": {
-      "type": "string",
-      "defaultValue": "CK-Dev-WAS-0",
+    "vmCount": {
+      "type": "int",
+      "defaultValue": 2,
       "metadata": {
-        "description": "The prefix of VM name"
+        "description": "The number of virtual machines used when provisioning"
       }
     },
     "ubuntuOSVersion": {
@@ -77,13 +71,6 @@
         "description": "Type of authentication to use on the Virtual Machine. SSH key is recommended."
       }
     },
-    "adminPassword": {
-      "type": "string",
-      "defaultValue": "eogksalsrnr1!",
-      "metadata": {
-        "description": "Password for the Virtual Machine."
-      }
-    },
     "_artifactsLocation": {
       "type": "string",
       "metadata": {
@@ -97,16 +84,36 @@
         "description": "The sasToken required to access _artifactsLocation.  When the template is deployed using the accompanying scripts, a sasToken will be automatically generated."
       },
       "defaultValue": ""
-    },
-    "vmCount": {
-      "type": "int",
-      "defaultValue": 2
     }
   },
+  "functions": [
+    {
+      "namespace": "howspace",
+      "members": {
+        "vmNamef": {
+          "parameters": [
+            {
+              "name": "vmprefix",
+              "type": "string"
+            },
+            {
+              "name": "index",
+              "type": "int"
+            }
+          ],
+          "output": {
+            "value": "[concat(parameters('vmprefix'), parameters('index'))]",
+            "type": "string"
+          }
+        }
+      },
+    }
+  ],
   "variables": {
     "imagePublisher": "Canonical",
     "imageOffer": "UbuntuServer",
-    "vmname": "[concat(parameters('vmprefix'), copyIndex(copy.name))]",
+    "vmprefix": "CK-Dev-WAS-0",
+    "vmName": "[howspace.vmNamef(variables('vmprefix'), copyIndex())]",
     "nicName": "[concat('vmname', 'Nic')]",
     "nsgName": "[concat('vmname', 'NSG')]",
     "addressPrefix": "10.0.0.0/16",
@@ -115,10 +122,8 @@
     "publicIPAddressName": "[concat('vmname', 'PublicIP')]",
     "virtualNetworkName": "[concat('vmname', 'VNET')]",
     "networkSecurityGroupName": "default-NSG",
-    "copy": {
-        "name": "vmcopy",
-        "count": "[parameters('vmCount')]"
-      }
+    "adminUsername": "rootadmin",
+    "adminPassword": "eogksalsrnr1!"
   },
   "resources": [
     {
@@ -266,8 +271,8 @@
         },
         "osProfile": {
           "computerName": "[variables('vmName')]",
-          "adminUsername": "[parameters('adminUsername')]",
-          "adminPassword": "[parameters('adminPassword')]"
+          "adminUsername": "[variables('adminUsername')]",
+          "adminPassword": "[variables('adminPassword')]"
         },
         "storageProfile": {
           "imageReference": {
@@ -293,6 +298,10 @@
             }
           ]
         }
+      },
+      "copy": {
+        "name": "vmInstances",
+        "count":  "[parameters('vmCount')]"
       }
     },
     {
