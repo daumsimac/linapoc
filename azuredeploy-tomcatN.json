@@ -109,7 +109,7 @@
   "variables": {
     "imagePublisher": "Canonical",
     "imageOffer": "UbuntuServer",
-    "vmname": "[concat(parameters('vmprefix'), copyIndex()]",
+    "vmname": "[concat(parameters('vmprefix'), copyIndex())]",
     "nicName": "[concat('vmname', 'Nic')]",
     "nsgName": "[concat('vmname', 'NSG')]",
     "addressPrefix": "10.0.0.0/16",
