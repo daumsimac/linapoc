@@ -48,7 +48,7 @@
       }
     },
     "vmprefix": {
-      "type": "int",
+      "type": "string",
       "defaultValue": "CK-Dev-WAS-0",
       "metadata": {
         "description": "The prefix of VM name"
