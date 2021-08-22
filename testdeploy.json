@@ -10,7 +10,7 @@
         },
         "dbcount": {
             "type": "int",
-            defaultValue: 2,
+            "defaultValue": 2,
             "metadata": {
                 "description": "description"
             }
