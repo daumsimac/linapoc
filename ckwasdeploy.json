@@ -119,18 +119,12 @@
         "imageOffer": "UbuntuServer",
         "nicNameSuffix": "VMNic",
         "nsgNameSuffix": "NSG",
-        //"nicName": "myVMNic",
-        //"nsgName": "myNSG",
-        //"vmName": "Tomcat",
-        "vmPrefix": "CKWAS-0"
+        "vmPrefix": "CKWAS-0",
         "addressPrefix": "10.0.0.0/16",
         "subnetNameSuffix": "Subnet",
-        //"subnetName": "Subnet",
         "subnetPrefix": "10.0.0.0/24",
         "publicIPAddressNameSuffix": "PublicIP",
         "virtualNetworkNameSuffix": "VNET",
-        //"publicIPAddressName": "myPublicIP",
-        //"virtualNetworkName": "MyVNET",
         "linuxConfiguration": {
         "disablePasswordAuthentication": true,
         "networkSecurityGroupName": "default-NSG"
